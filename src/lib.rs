@@ -439,7 +439,7 @@ pub extern "C" fn number_to_text(chars: &mut [c_char; 64], mut number: i64) -> c
     let mut pos = 63;
     while number > 0 {
         pos -= 1;
-        chars[pos] = b'0' as i8 + (number % 3) as i8;
+        chars[pos] = b'0' as c_char + (number % 3) as c_char;
         number /= 3;
     }
     if minus {
